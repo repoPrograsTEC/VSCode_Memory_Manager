@@ -1,6 +1,11 @@
-#include <iostream>
+#include<iostream>
+#include "VSPointer.cpp"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    VSPointer<int> ptr(new int());
+    *ptr = 20;
+    cout << *ptr;
     return 0;
 }
