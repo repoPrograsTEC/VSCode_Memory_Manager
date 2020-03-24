@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int main() {
     VSPointer<int> ptr(new int());
     *ptr = 20;
