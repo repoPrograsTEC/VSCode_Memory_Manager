@@ -1,12 +1,12 @@
 #include<iostream>
-#include "VSPointer.cpp"
-
+#include "VSPtr.cpp"
 using namespace std;
 
 
 int main() {
-    VSPointer<int> ptr(new int());
+    VSPtr<int> ptr = VSPtr<int>::New();
     *ptr = 20;
-    cout << *ptr;
+    cout << *ptr << endl;
+    cout << &ptr << endl;
     return 0;
 }
