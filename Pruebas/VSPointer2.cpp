@@ -86,6 +86,8 @@ public:
     ~VSPtr(){
         (*m_counter)--;
         if (m_counter->get() == 0) {
+            cout << " Ref " << m_ptr << " :" << m_counter->get() << endl;
+            cout << "Destroying pointer:" << m_ptr << endl;
             delete m_counter;
             delete m_ptr;
         }
@@ -95,6 +97,10 @@ public:
         os << "Address pointed : "
            << sp.get() << endl;
         cout << *(sp.m_counter) << endl;
+    }
+
+    static VSPtr New(){
+        return VSPtr(new int());
     }
 
 private:
