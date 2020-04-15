@@ -1,10 +1,20 @@
 #include<iostream>
 #include "../Archivos/VSPtr.cpp"
+#include "../Pruebas/Garbage.cpp"
 
 using namespace std;
 
 
+/* Null, because instance will be initialized on demand. */
+Garbage* Garbage::instance = nullptr;
+
 int main() {
+
+    Garbage *s = Garbage::getInstance();
+    cout << s -> getData() << endl;
+    s->setData(100);
+    cout << s -> getData() << endl;
+
 
     VSPtr<int> myPtr1 = VSPtr<int>::New();
     VSPtr<int> myPtr2 = VSPtr<int>::New();
