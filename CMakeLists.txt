@@ -2,5 +2,6 @@ cmake_minimum_required(VERSION 3.9.2)
 project(VSCode_Memory_Manager)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS -pthread)
 
-add_executable(VSCode_Memory_Manager  "Main/main.cpp" Pruebas/Garbage.cpp)
+add_executable(VSCode_Memory_Manager  "Main/Main.cpp" )
