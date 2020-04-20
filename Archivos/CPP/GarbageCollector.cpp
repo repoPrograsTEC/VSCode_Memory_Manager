@@ -4,6 +4,7 @@
 #include <mutex>
 #include "../Headers/GarbageCollector.h"
 using std::cout;
+using std::endl;
 using std::thread;
 using namespace std::literals::chrono_literals;
 

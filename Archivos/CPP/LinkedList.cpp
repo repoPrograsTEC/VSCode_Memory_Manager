@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../Headers/LinkedList.h"
 using std::cout;
+using std::endl;
 
 template<class T>
 LinkedList<T>::LinkedList(){
