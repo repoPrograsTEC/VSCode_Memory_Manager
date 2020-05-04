@@ -48,12 +48,19 @@ LinkedList<T> *GarbageCollector<T>::getList() {
 }
 template<typename T>
 void GarbageCollector<T>::deleteInst(){
-    cout << endl << endl << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
-    cout << "----->   Borrando lista: " << list << endl;
+    cout << "\n********        ********        ********        ********         ********        ********        "
+            "********        ********        ********       ********        ******** " << endl;
+
+    cout << "\n\n----->   Borrando lista: " << list << endl;
+    cout << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
+
+    delete GarbageCollector<T>::getList();
+    delete GarbageCollector<T>::getInstance();
     list = nullptr;
     inst_ = nullptr;
-    cout << endl << endl << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
-    cout << "----->   Borrando lista: " << list << endl;
+
+    cout << "\n\n----->   Borrando lista: " << list << endl;
+    cout << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
 }
 
 template<typename T>
@@ -81,24 +88,28 @@ void GarbageCollector<T>::setValue(int val) {
 template<typename T>
 void GarbageCollector<T>::executeThread(){
     while(!stopThread) {
-        GarbageCollector::length = GarbageCollector<T>::getList()->getLength();
+        if(GarbageCollector<T>::inst_ == nullptr){
+            break;
+        }else {
+            GarbageCollector::length = GarbageCollector<T>::getList()->getLength();
 
-        cout << "       EN EL WHILE DEL THREAD! " << endl;
+            cout << endl << "****************************************************"
+                            "**************************************************** " << endl;
+            cout << "       EN EL WHILE DEL THREAD! " << endl;
 
-        if (GarbageCollector::length == 0 && !firstIter) {
-            stopThread = true;
-        } else{
-            firstIter = false;
-            GarbageCollector<T>::getList()->display();
+            if (GarbageCollector::length == 0 && !firstIter) {
+                stopThread = true;
+            } else {
+                firstIter = false;
+                GarbageCollector<T>::getList()->display();
+            }
+            std::this_thread::sleep_for(std::chrono::seconds(2));
         }
-        std::this_thread::sleep_for(std::chrono::seconds(2));
-
     }
 
     cout << endl << "****************************************************" << endl << endl;
     cout << "                 SALIENDO DEL THREAD                    " << endl;
     cout << endl << "****************************************************" << endl << endl;
-
 }
 
 template<typename T>

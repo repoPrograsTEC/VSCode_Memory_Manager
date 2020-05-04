@@ -2,14 +2,14 @@
 #define PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__VSPTR_H
 
 #include "ReferenceCounter.h"
-#include "GarbageCollector.h"
+using std::ostream;
+using std::endl;
 
 template<class T>
 class VSPtr {
 private:
     T *ptr;
     RC *ref;
-    int ID = 0;
 public:
     VSPtr();
     explicit VSPtr(T *pValue);
@@ -24,11 +24,14 @@ public:
 
     static VSPtr<T> New();
 
-    T *getAddress();
+    VSPtr<T>* getInstanceAddress();
+    T* getAddress();
     int getCount();
-    int getID();
-    void setID(int);
 };
+
+
+//SE DEFINE AL FINAL PARA QUE EL MÉTODO CREATENODE DE LINKEDLIST RECONOZCA LA CLASE VSPTR
+#include "GarbageCollector.h"
 
 
 #endif //PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__VSPTR_H

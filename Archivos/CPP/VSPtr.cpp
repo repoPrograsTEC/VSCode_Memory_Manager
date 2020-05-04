@@ -1,5 +1,4 @@
 #include <iostream>
-#include <thread>
 #include <unistd.h>
 #include "../Headers/VSPtr.h"
 using std::cout;
@@ -19,14 +18,9 @@ VSPtr<T>::VSPtr(T *pValue) : ptr(pValue), ref(0){
     ref->AddRef();
 
     //AGREGANDO INSTANCIA VSPOINTER AL GARBAGE COLLECTOR
-    GarbageCollector<T>::getList()->createNode(ptr);
-
-    //ESTABLECIENDO ID DEL VSPOINTER
-    ID = GarbageCollector<T>::getList()->getLength();
+    GarbageCollector<T>::getList()->createNode(this);
 
     cout << "   ***   SALIENDO DEL CONSTRUCTOR VSPtr!   ***   " << endl;
-    cout << "****************************************************" << endl << endl;
-
 
     sleep(2);
 
@@ -41,39 +35,31 @@ VSPtr<T>::VSPtr(const VSPtr<T> &sp) : ptr(sp.ptr), ref(sp.ref) {
 }
 template<class T>
 VSPtr<T>::~VSPtr() {
-    cout << "LLamada al destructor de ----->" << "  ID: " << this->ID << "   Data: " << ptr << endl;
+    cout << "\n\nLLamada al destructor de ----->" << "  INSTANCIA VSPOINTER: " << this << "   PTR: " << this->ptr << "   *PTR: " << *(this->ptr) << endl;
 
-    GarbageCollector<T>::getList()->deleteAtPosition(this->ID);
+    GarbageCollector<T>::getList()->deleteAtPosition(this);
 
     if(ref->Release() == 0){
-        cout << "       Borrando Puntero: " << ptr << endl;
+        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         delete ptr;
-        ptr = nullptr;
-
-        cout << "       Borrando RC: " << ref->getCount() << endl << endl;
         delete ref;
+        ptr = nullptr;
         ref = nullptr;
+        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
 
         // SI NO HAY MÁS VSPOINTER, SE ELIMINA LA LISTA Y EL GARBAGE COLLECTOR
         if (GarbageCollector<T>::getList()->getLength() == 0){
-
-            delete GarbageCollector<T>::getList();
-            delete GarbageCollector<T>::getInstance();
-
-            sleep(2);
-
             GarbageCollector<T>::deleteInst();
-
             sleep(2);
         }
 
     } else{
 
         //EVITANDO PUNTEROS COLGANTES
-        cout << "----->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
+        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         ptr = nullptr;
         ref = nullptr;
-        cout << "----->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
+        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
     }
     sleep(2);
 }
@@ -85,8 +71,7 @@ T &VSPtr<T>::operator*() {
 template<class T>
 T &VSPtr<T>::operator&() {
     return *ptr;
-    }
-
+}
 template<class T>
 VSPtr<T> *VSPtr<T>::operator->() {
     return this;
@@ -97,11 +82,12 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
     if (this != &sp) { // Avoid self assignment
         // Decrement the old ref refCount
         // if ref become zero delete the old data
-        int idActual = 0;
         if(ref->Release() == 0){
-            idActual = this->ID;
             delete ptr;
             delete ref;
+
+            ptr = nullptr;
+            ref = nullptr;
         }
 
         // Copy the data and ref pointer
@@ -110,7 +96,39 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
         ref = sp.ref;
         ref->AddRef();
 
-        (GarbageCollector<T>::getList()->getAtPosition(idActual))-> data = ptr;
+
+
+
+
+
+
+
+        //*******************************
+
+        Node<T> *temp = new Node<T>;
+        temp = (GarbageCollector<T>::getList()) -> getHead();
+        while(temp->data != &sp){
+            temp = temp->next;
+        }
+
+        int tempID = temp -> ID;
+
+
+        Node<T> *temp2 = new Node<T>;
+        temp2 = (GarbageCollector<T>::getList()) -> getHead();
+        while(temp2->data != this){
+            temp2 = temp2->next;
+        }
+
+        temp2->ID = tempID;
+
+        //*******************************
+
+
+
+
+
+
 
         sleep(3);
     }
@@ -124,7 +142,7 @@ VSPtr<T> &VSPtr<T>::operator=(int sp) {
 
         *ptr = sp;
 
-        GarbageCollector<T>::getList()->assignAll(this->ID, sp);
+        //GarbageCollector<T>::getList()->assignAll(this->ID, sp);
 
         sleep(3);
     }
@@ -139,22 +157,18 @@ VSPtr<T> VSPtr<T>::New(){
 
     cout << endl << "   ***   ENTRANDO AL MÉTODO New()!   ***" << endl;
 
-    return VSPtr(new int());
+    return VSPtr<T>(new int());
 }
 
 template<class T>
-T* VSPtr<T>::getAddress() {
-    return ptr;
+VSPtr<T> *VSPtr<T>::getInstanceAddress() {
+    return this;
+}
+template<class T>
+T *VSPtr<T>::getAddress() {
+    return this->ptr;
 }
 template<class T>
 int VSPtr<T>::getCount() {
     return ref->getCount();
-}
-template<class T>
-int VSPtr<T>::getID() {
-    return ID;
-}
-template<class T>
-void VSPtr<T>::setID(int id) {
-    ID = id;
 }

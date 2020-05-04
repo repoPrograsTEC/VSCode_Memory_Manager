@@ -1,12 +1,12 @@
 #ifndef PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__LINKEDLIST_H
 #define PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__LINKEDLIST_H
 
-
+#include "VSPtr.h"
 
 template<typename T>
 struct Node {
-    T *data;
-    int value, ID;
+    VSPtr<T> *data;
+    int ID;
     Node *next;
 };
 
@@ -19,10 +19,12 @@ private:
 public:
     LinkedList();
 
-    void createNode(T*);
+    void createNode(VSPtr<T> *);
+
     void display();
     int getLength();
     Node<T>* getAtPosition(int);
+    Node<T>* getHead();
 
     void insertAtFirst(T *);
     void insertAtEnd(T *);
@@ -30,7 +32,7 @@ public:
 
     void deleteFirst();
     void deleteLast();
-    void deleteAtPosition(int id);
+    void deleteAtPosition(VSPtr<T> *);
 
     void assignAll(int, int);
 };

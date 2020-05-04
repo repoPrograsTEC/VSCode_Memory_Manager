@@ -10,39 +10,41 @@ LinkedList<T>::LinkedList(){
 }
 
 template<class T>
-void LinkedList<T>::createNode(T *value){
+void LinkedList<T>::createNode(VSPtr<T> *pVsPtr){
     length++;
     Node<T> *temp = new Node<T>;
-    temp->data = value;
-    temp->value = *value;
+    temp->data = pVsPtr;
     temp->next = NULL;
     if(head == NULL){
         head = temp;
         tail = temp;
-        // ID PARA EL NODO DE LA LISTA
         temp->ID = this->getLength();
         temp = NULL;
     }
     else{
         tail->next = temp;
         tail = temp;
-        // ID PARA EL NODO DE LA LISTA
         tail->ID = this->getLength();
     }
+
 }
+
 template<class T>
 void LinkedList<T>::display(){
     Node<T> *temp = new Node<T>;
     temp = head;
     cout << endl << "¡IMPRIMIENDO LISTA! " << endl;
     while(temp != NULL){
+        cout << "       INSTANCIA VSPOINTER : " << temp->data << "  ";
         cout << "       ID: " << temp->ID << "  ";
-        cout << "   VSPTR: " << temp->data << "  ";
-        cout << "   Value: " << temp->value << endl;
+        cout << "       PTR: " << (temp->data)->getAddress() << "  ";
+        cout << "       *PTR: " << *((temp->data)->getAddress())<< endl;
         temp = temp->next;
     }
-    cout << endl << "**************************************************** " << endl;
+    cout << endl << "****************************************************"
+                    "**************************************************** " << endl;
 }
+
 template<class T>
 int LinkedList<T>::getLength() {
     return length;
@@ -61,6 +63,10 @@ Node<T>* LinkedList<T>::getAtPosition(int id){
     }
 
     return current;
+}
+template<class T>
+Node<T> *LinkedList<T>::getHead() {
+    return this->head;
 }
 
 template<class T>
@@ -142,22 +148,18 @@ void LinkedList<T>::deleteLast(){
     delete current;
 }
 template<class T>
-void LinkedList<T>::deleteAtPosition(int id){
-    if (id == 1){
-        deleteFirst();
-    }else {
-        length--;
-        Node<T> *current = new Node<T>;
-        Node<T> *previous = new Node<T>;
-        current = head;
+void LinkedList<T>::deleteAtPosition(VSPtr<T> *vsPtr){
+    length--;
+    Node<T> *current = new Node<T>;
+    Node<T> *previous = new Node<T>;
+    current = head;
 
-        for (int i = 1; i < id; i++) {
-            previous = current;
-            current = current->next;
-        }
-
-        previous->next = current->next;
+    while(current->data != vsPtr){
+        previous = current;
+        current = current->next;
     }
+
+    previous->next = current->next;
 }
 template<class T>
 void LinkedList<T>::assignAll(int id, int sp){
