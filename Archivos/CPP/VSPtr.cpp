@@ -3,6 +3,7 @@
 #include "../Headers/VSPtr.h"
 using std::cout;
 using std::endl;
+using std::string;
 
 template<class T>
 VSPtr<T>::VSPtr() : ptr(0), ref(0){
@@ -18,7 +19,7 @@ VSPtr<T>::VSPtr(T *pValue) : ptr(pValue), ref(0){
     ref->AddRef();
 
     //AGREGANDO INSTANCIA VSPOINTER AL GARBAGE COLLECTOR
-    GarbageCollector<T>::getList()->createNode(this);
+    GarbageCollector::getList<T>()->createNode(this);
 
     cout << "   ***   SALIENDO DEL CONSTRUCTOR VSPtr!   ***   " << endl;
 
@@ -37,7 +38,7 @@ template<class T>
 VSPtr<T>::~VSPtr() {
     cout << "\n\nLLamada al destructor de ----->" << "  INSTANCIA VSPOINTER: " << this << "   PTR: " << this->ptr << "   *PTR: " << *(this->ptr) << endl;
 
-    GarbageCollector<T>::getList()->deleteAtPosition(this);
+    GarbageCollector::getList<T>()->deleteAtPosition(this);
 
     if(ref->Release() == 0){
         cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
@@ -48,13 +49,12 @@ VSPtr<T>::~VSPtr() {
         cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
 
         // SI NO HAY MÁS VSPOINTER, SE ELIMINA LA LISTA Y EL GARBAGE COLLECTOR
-        if (GarbageCollector<T>::getList()->getLength() == 0){
-            GarbageCollector<T>::deleteInst();
+        if (GarbageCollector::getList<T>()->getLength() == 0){
+            GarbageCollector::deleteInst<T>();
             sleep(2);
         }
 
     } else{
-
         //EVITANDO PUNTEROS COLGANTES
         cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         ptr = nullptr;
@@ -106,8 +106,8 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
         //*******************************
 
         Node<T> *temp = new Node<T>;
-        temp = (GarbageCollector<T>::getList()) -> getHead();
-        while(temp->data != &sp){
+        temp = (GarbageCollector::getList<T>()) -> getHead();
+        while((temp->data) != &sp){
             temp = temp->next;
         }
 
@@ -115,7 +115,7 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
 
 
         Node<T> *temp2 = new Node<T>;
-        temp2 = (GarbageCollector<T>::getList()) -> getHead();
+        temp2 = (GarbageCollector::getList<T>()) -> getHead();
         while(temp2->data != this){
             temp2 = temp2->next;
         }
@@ -151,8 +151,8 @@ VSPtr<T> &VSPtr<T>::operator=(int sp) {
 
 template<class T>
 VSPtr<T> VSPtr<T>::New(){
-    if (GarbageCollector<T>::getList() == nullptr) {
-        GarbageCollector<T>::init();
+    if (GarbageCollector::getList<T>() == nullptr) {
+        GarbageCollector::init<T>();
     }
 
     cout << endl << "   ***   ENTRANDO AL MÉTODO New()!   ***" << endl;

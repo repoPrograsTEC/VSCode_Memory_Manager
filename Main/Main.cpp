@@ -3,10 +3,12 @@
 
 
 
-//  AGREGAR FUNCIONALIDAD DE INSTANCIAR VSPOINTERS DE TIPO FLOAT, DOUBLE, ETC...
-
-
 //  REVISAR CORRECTA ELIMINACION DE "DUMB" POINTERS EN EL CÓDIGO COMPLETO
+//  REVISAR EL CORRECTO USO DE TEMPLATES EN GENERAL
+
+
+
+
 
 
 
@@ -18,6 +20,7 @@
 
 using std::cin;
 using std::cout;
+using std::string;
 
 int main(){
 

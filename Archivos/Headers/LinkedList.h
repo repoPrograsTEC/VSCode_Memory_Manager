@@ -20,8 +20,8 @@ public:
     LinkedList();
 
     void createNode(VSPtr<T> *);
-
     void display();
+
     int getLength();
     Node<T>* getAtPosition(int);
     Node<T>* getHead();

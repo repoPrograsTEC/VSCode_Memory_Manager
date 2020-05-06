@@ -3,13 +3,12 @@
 using std::cout;
 using std::endl;
 
-template<class T>
+template<typename T>
 LinkedList<T>::LinkedList(){
     head = NULL;
     tail = NULL;
 }
-
-template<class T>
+template<typename T>
 void LinkedList<T>::createNode(VSPtr<T> *pVsPtr){
     length++;
     Node<T> *temp = new Node<T>;
@@ -26,10 +25,9 @@ void LinkedList<T>::createNode(VSPtr<T> *pVsPtr){
         tail = temp;
         tail->ID = this->getLength();
     }
-
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::display(){
     Node<T> *temp = new Node<T>;
     temp = head;
@@ -44,12 +42,11 @@ void LinkedList<T>::display(){
     cout << endl << "****************************************************"
                     "**************************************************** " << endl;
 }
-
-template<class T>
+template<typename T>
 int LinkedList<T>::getLength() {
     return length;
 }
-template<class T>
+template<typename T>
 Node<T>* LinkedList<T>::getAtPosition(int id){
     Node<T> *current = new Node<T>;
     Node<T> *previous = new Node<T>;
@@ -64,7 +61,7 @@ Node<T>* LinkedList<T>::getAtPosition(int id){
 
     return current;
 }
-template<class T>
+template<typename T>
 Node<T> *LinkedList<T>::getHead() {
     return this->head;
 }
@@ -125,7 +122,7 @@ void LinkedList<T>::insertAtPosition(int pos, T* value){
     temp->next = current;
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::deleteFirst(){
     length--;
     Node<T> *temp = new Node<T>;
@@ -133,7 +130,7 @@ void LinkedList<T>::deleteFirst(){
     head = head->next;
     delete temp;
 }
-template<class T>
+template<typename T>
 void LinkedList<T>::deleteLast(){
     length--;
     Node<T> *current = new Node<T>;
@@ -161,13 +158,14 @@ void LinkedList<T>::deleteAtPosition(VSPtr<T> *vsPtr){
 
     previous->next = current->next;
 }
-template<class T>
+
+template<typename T>
 void LinkedList<T>::assignAll(int id, int sp){
     Node<T> *temp = new Node<T>;
     temp = head;
     while(temp != NULL){
-        if (temp->data == (GarbageCollector<T>::getList()->getAtPosition(id))->data){
-            temp->value = sp;
+        if (temp->data == (GarbageCollector::getList<T>()->getAtPosition(id))->data){
+            //temp->value = sp;
         }
         temp = temp->next;
     }
