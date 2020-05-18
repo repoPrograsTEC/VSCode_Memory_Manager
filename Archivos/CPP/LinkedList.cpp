@@ -1,5 +1,4 @@
 #include <iostream>
-#include <assert.h>
 #include "../Headers/LinkedList.h"
 using std::cout;
 using std::endl;
@@ -234,16 +233,5 @@ void LinkedList::deleteAtPosition(VSPtr<T> *vsPtr){
             previous = current;
             current = current->next;
         }
-    }
-}
-template<typename T>
-void LinkedList::assignAll(int id, int sp){
-    Node *temp = new Node;
-    temp = head;
-    while(temp != NULL){
-        //if ((temp->data) == (GarbageCollector::getList()->getAtPosition(id))->data){
-            //temp->value = sp;
-        //}
-        temp = temp->next;
     }
 }

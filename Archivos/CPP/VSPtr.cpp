@@ -1,9 +1,4 @@
-#include <iostream>
-#include <unistd.h>
-#include <typeinfo>
 #include "../Headers/VSPtr.h"
-using std::cout;
-using std::endl;
 using std::string;
 
 template<class T>
@@ -28,12 +23,10 @@ VSPtr<T>::VSPtr(const VSPtr<T> &sp) : ptr(sp.ptr), ref(sp.ref) {
 }
 template<class T>
 VSPtr<T>::~VSPtr() {
-    cout << "\n\nLLamada al destructor de ----->" << "  INSTANCIA VSPOINTER: " << this << "   PTR: " << this->ptr << "   *PTR: " << *(this->ptr) << endl;
     GarbageCollector::setBoolDestructor();
     GarbageCollector::getList()->deleteAtPosition(this);
 
     if(ref->Release() == 0){
-        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         delete ptr;
         delete ref;
         ptr = nullptr;
@@ -42,12 +35,9 @@ VSPtr<T>::~VSPtr() {
         // SI NO HAY MÁS VSPOINTER, SE ELIMINA LA LISTA Y EL GARBAGE COLLECTOR
         if (GarbageCollector::getList()->getLength() == 0){
             GarbageCollector::deleteInst();
-
         }
-
     } else{
         //EVITANDO PUNTEROS COLGANTES
-        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         ptr = nullptr;
         ref = nullptr;
     }
@@ -156,70 +146,49 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(int sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(float sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(double sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(long sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(char sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(string sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
 }
 template<class T>
 VSPtr<T> &VSPtr<T>::operator=(bool sp) {
-    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
     if ((typeid(*ptr).name() == typeid(sp).name())) {
-        cout << " ** Asignando valor ** "<< endl << endl;
-
         *ptr = sp;
     }
     return *this;
@@ -230,10 +199,8 @@ VSPtr<T> VSPtr<T>::New(){
     if (GarbageCollector::getList() == nullptr) {
         GarbageCollector::init();
     }
-
     return VSPtr<T>(new T());
 }
-
 
 template<class T>
 VSPtr<T> *VSPtr<T>::getInstanceAddress() {

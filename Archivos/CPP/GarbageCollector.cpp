@@ -1,10 +1,5 @@
-#include <iostream>
-#include <unistd.h>
 #include <thread>
-#include <mutex>
 #include "../Headers/GarbageCollector.h"
-using std::cout;
-using std::endl;
 using std::thread;
 using namespace std::literals::chrono_literals;
 
@@ -17,9 +12,7 @@ bool GarbageCollector::finished = false;
 bool GarbageCollector::stopThread = false;
 bool GarbageCollector::inDestructor = false;
 
-
 void GarbageCollector::init() {
-    cout << "   ***   ENTRANDO AL MÉTODO init()!   ***" << endl;
     GarbageCollector::inst_ = GarbageCollector::getInstance();
 
     //EJECUCIÓN DE THREAD
@@ -41,19 +34,10 @@ LinkedList *GarbageCollector::getList() {
 }
 
 void GarbageCollector::deleteInst(){
-    cout << "\n********        ********        ********        ********         ********        ********        "
-            "********        ********        ********       ********        ******** " << endl;
-
-    cout << "\n\n----->   Borrando lista: " << list << endl;
-    cout << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
-
     delete GarbageCollector::getList();
     delete GarbageCollector::getInstance();
     list = nullptr;
     inst_ = nullptr;
-
-    cout << "\n\n----->   Borrando lista: " << list << endl;
-    cout << "----->   Borrando instancia de GarbageCollector: " << inst_ << endl;
 }
 
 int GarbageCollector::getValue() {
@@ -84,32 +68,20 @@ void GarbageCollector::executeThread(){
             break;
         }else {
             GarbageCollector::length = GarbageCollector::getList()->getLength();
-
-            cout << endl << "****************************************************"
-                            "**************************************************** " << endl;
-            cout << "       EN EL WHILE DEL THREAD! " << endl;
-
             if (GarbageCollector::length == 0 && !firstIter) {
                 stopThread = true;
             } else {
                 firstIter = false;
                 if (!inDestructor) {
-                    GarbageCollector::getList()->display();
+                    //GarbageCollector::getList()->display();
                 }
             }
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
-
-    cout << endl << "****************************************************" << endl << endl;
-    cout << "                 SALIENDO DEL THREAD                    " << endl;
-    cout << endl << "****************************************************" << endl << endl;
 }
 
 void GarbageCollector::threadOn() {
-    cout << endl << "   ***   EJECUTANDO THREAD!   ***   " << endl;
-
     thread t1(executeThread);
-
     t1.detach();
 }

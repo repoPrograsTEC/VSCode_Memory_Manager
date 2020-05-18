@@ -2,10 +2,6 @@
 #define PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__LINKEDLIST_H
 
 #include "VSPtr.h"
-#include <any>
-#include <variant>
-using std::any;
-using std::variant;
 using std::string;
 
 struct VSPtrType{
@@ -53,8 +49,6 @@ public:
     void deleteLast();
     template<typename T>
     void deleteAtPosition(VSPtr<T> *);
-    template<typename T>
-    void assignAll(int, int);
 };
 
 #endif //PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__LINKEDLIST_H
