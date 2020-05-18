@@ -4,4 +4,4 @@ project(VSCode_Memory_Manager)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS -pthread)
 
-add_executable(VSCode_Memory_Manager  "Main/Main.cpp" )
+#add_executable(VSCode_Memory_Manager)
