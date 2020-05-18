@@ -10,35 +10,31 @@ protected:
 
 private:
     static GarbageCollector *inst_;
-    template<typename T>
-    static LinkedList<T> *list;
+    static LinkedList *list;
     static bool firstIter;
     static bool finished;
     static bool stopThread;
+    static bool inDestructor;
 
     GarbageCollector();
     GarbageCollector(const GarbageCollector &);
     GarbageCollector &operator=(const GarbageCollector &);
 
 public:
-    template<typename T>
     static void init();
-    template<typename T>
     static GarbageCollector *getInstance();
-    template<typename T>
-    static LinkedList<T> *getList();
-    template<typename T>
+    static LinkedList *getList();
     static void deleteInst();
 
     int getValue();
     bool getIter();
     bool getFinished();
     bool getStopThread();
+    static bool getBoolDestructor();
+    static void setBoolDestructor();
     void setValue(int val);
 
-    template<typename T>
     static void executeThread();
-    template<typename T>
     static void threadOn();
 };
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <typeinfo>
 #include "../Headers/VSPtr.h"
 using std::cout;
 using std::endl;
@@ -12,19 +13,11 @@ VSPtr<T>::VSPtr() : ptr(0), ref(0){
 }
 template<class T>
 VSPtr<T>::VSPtr(T *pValue) : ptr(pValue), ref(0){
-    cout << "   ***   SALIENDO DEL MÉTODO New()!     ***   " << endl << endl;
-    cout << "   ***   ENTRANDO AL CONSTRUCTOR VSPtr!   ***   " << endl;
-
     ref = new RC();
     ref->AddRef();
 
     //AGREGANDO INSTANCIA VSPOINTER AL GARBAGE COLLECTOR
-    GarbageCollector::getList<T>()->createNode(this);
-
-    cout << "   ***   SALIENDO DEL CONSTRUCTOR VSPtr!   ***   " << endl;
-
-    sleep(2);
-
+    GarbageCollector::getList()->createNode(this);
 }
 template<class T>
 VSPtr<T>::VSPtr(const VSPtr<T> &sp) : ptr(sp.ptr), ref(sp.ref) {
@@ -32,13 +25,12 @@ VSPtr<T>::VSPtr(const VSPtr<T> &sp) : ptr(sp.ptr), ref(sp.ref) {
     // Copy the data and ref pointer
     // and increment the ref refCount
     ref->AddRef();
-    sleep(3);
 }
 template<class T>
 VSPtr<T>::~VSPtr() {
     cout << "\n\nLLamada al destructor de ----->" << "  INSTANCIA VSPOINTER: " << this << "   PTR: " << this->ptr << "   *PTR: " << *(this->ptr) << endl;
-
-    GarbageCollector::getList<T>()->deleteAtPosition(this);
+    GarbageCollector::setBoolDestructor();
+    GarbageCollector::getList()->deleteAtPosition(this);
 
     if(ref->Release() == 0){
         cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
@@ -46,12 +38,11 @@ VSPtr<T>::~VSPtr() {
         delete ref;
         ptr = nullptr;
         ref = nullptr;
-        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
 
         // SI NO HAY MÁS VSPOINTER, SE ELIMINA LA LISTA Y EL GARBAGE COLLECTOR
-        if (GarbageCollector::getList<T>()->getLength() == 0){
-            GarbageCollector::deleteInst<T>();
-            sleep(2);
+        if (GarbageCollector::getList()->getLength() == 0){
+            GarbageCollector::deleteInst();
+
         }
 
     } else{
@@ -59,9 +50,7 @@ VSPtr<T>::~VSPtr() {
         cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl;
         ptr = nullptr;
         ref = nullptr;
-        cout << "-------->   Borrando ptr: " << ptr << "       RC: " << ref << endl << endl;
     }
-    sleep(2);
 }
 
 template<class T>
@@ -85,7 +74,6 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
         if(ref->Release() == 0){
             delete ptr;
             delete ref;
-
             ptr = nullptr;
             ref = nullptr;
         }
@@ -97,40 +85,72 @@ VSPtr<T> &VSPtr<T>::operator=(const VSPtr<T> &sp) {
         ref->AddRef();
 
 
+        Node *current = new Node;
+        Node *previous = new Node;
+        current = (GarbageCollector::getList()) -> getHead();
 
+        int tempID = 0;
 
-
-
-
-
-        //*******************************
-
-        Node<T> *temp = new Node<T>;
-        temp = (GarbageCollector::getList<T>()) -> getHead();
-        while((temp->data) != &sp){
-            temp = temp->next;
+        for(int i = 0; i < (GarbageCollector::getList()) -> getLength(); i++){
+            if (typeid(T) == typeid(int) && (current->data.intType) == (VSPtr<int>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(float) && (current->data.floatType) == (VSPtr<float>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(double) && (current->data.doubleType) == (VSPtr<double>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(long) && (current->data.longType) == (VSPtr<long>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(char) && (current->data.charType) == (VSPtr<char>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(string) && (current->data.stringType) == (VSPtr<string>*)&sp){
+                tempID = current->ID;
+                break;
+            } else if (typeid(T) == typeid(bool) && (current->data.boolType) == (VSPtr<bool>*)&sp){
+                tempID = current->ID;
+                break;
+            } else{
+                previous = current;
+                current = current->next;
+            }
         }
 
-        int tempID = temp -> ID;
 
+        Node *current2 = new Node;
+        Node *previous2 = new Node;
+        current2 = (GarbageCollector::getList()) -> getHead();
 
-        Node<T> *temp2 = new Node<T>;
-        temp2 = (GarbageCollector::getList<T>()) -> getHead();
-        while(temp2->data != this){
-            temp2 = temp2->next;
+        for(int i = 0; i < (GarbageCollector::getList()) -> getLength(); i++){
+            if (typeid(T) == typeid(int) && (current2->data.intType) == (VSPtr<int>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(float) && (current2->data.floatType) == (VSPtr<float>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(double) && (current2->data.doubleType) == (VSPtr<double>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(long) && (current2->data.longType) == (VSPtr<long>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(char) && (current2->data.charType) == (VSPtr<char>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(string) && (current2->data.stringType) == (VSPtr<string>*)this){
+                current2->ID = tempID;
+                break;
+            } else if (typeid(T) == typeid(bool) && (current2->data.boolType) == (VSPtr<bool>*)this){
+                current2->ID = tempID;
+                break;
+            } else{
+                previous2 = current2;
+                current2 = current2->next;
+            }
         }
-
-        temp2->ID = tempID;
-
-        //*******************************
-
-
-
-
-
-
-
-        sleep(3);
     }
     return *this;
 }
@@ -141,24 +161,79 @@ VSPtr<T> &VSPtr<T>::operator=(int sp) {
         cout << " ** Asignando valor ** "<< endl << endl;
 
         *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(float sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
 
-        //GarbageCollector<T>::getList()->assignAll(this->ID, sp);
+        *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(double sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
 
-        sleep(3);
+        *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(long sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
+
+        *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(char sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
+
+        *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(string sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
+
+        *ptr = sp;
+    }
+    return *this;
+}
+template<class T>
+VSPtr<T> &VSPtr<T>::operator=(bool sp) {
+    cout << endl << " ** Reasignacion de valor interno ** "<< endl;
+    if ((typeid(*ptr).name() == typeid(sp).name())) {
+        cout << " ** Asignando valor ** "<< endl << endl;
+
+        *ptr = sp;
     }
     return *this;
 }
 
 template<class T>
 VSPtr<T> VSPtr<T>::New(){
-    if (GarbageCollector::getList<T>() == nullptr) {
-        GarbageCollector::init<T>();
+    if (GarbageCollector::getList() == nullptr) {
+        GarbageCollector::init();
     }
 
-    cout << endl << "   ***   ENTRANDO AL MÉTODO New()!   ***" << endl;
-
-    return VSPtr<T>(new int());
+    return VSPtr<T>(new T());
 }
+
 
 template<class T>
 VSPtr<T> *VSPtr<T>::getInstanceAddress() {
@@ -167,6 +242,10 @@ VSPtr<T> *VSPtr<T>::getInstanceAddress() {
 template<class T>
 T *VSPtr<T>::getAddress() {
     return this->ptr;
+}
+template<class T>
+T VSPtr<T>::getAddressValue() {
+    return *(this->ptr);
 }
 template<class T>
 int VSPtr<T>::getCount() {

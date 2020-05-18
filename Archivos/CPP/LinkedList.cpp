@@ -1,18 +1,42 @@
 #include <iostream>
+#include <assert.h>
 #include "../Headers/LinkedList.h"
 using std::cout;
 using std::endl;
 
-template<typename T>
-LinkedList<T>::LinkedList(){
+LinkedList::LinkedList(){
     head = NULL;
     tail = NULL;
 }
 template<typename T>
-void LinkedList<T>::createNode(VSPtr<T> *pVsPtr){
+void LinkedList::createNode(VSPtr<T> *pVsPtr){
     length++;
-    Node<T> *temp = new Node<T>;
-    temp->data = pVsPtr;
+
+    Node *temp = new Node;
+
+   if (typeid(T) == typeid(int)){
+       (temp->data).intType = (VSPtr<int>*)pVsPtr;
+       temp->dataType = typeid(int).name();
+   } else if (typeid(T) == typeid(float)){
+       (temp->data).floatType = (VSPtr<float>*)pVsPtr;
+       temp->dataType = typeid(float).name();
+   } else if (typeid(T) == typeid(double)){
+       (temp->data).doubleType = (VSPtr<double>*)pVsPtr;
+       temp->dataType = typeid(double).name();
+   } else if (typeid(T) == typeid(long)){
+       (temp->data).longType = (VSPtr<long>*)pVsPtr;
+       temp->dataType = typeid(long).name();
+   } else if (typeid(T) == typeid(char)){
+       (temp->data).charType = (VSPtr<char>*)pVsPtr;
+       temp->dataType = typeid(char).name();
+   } else if (typeid(T) == typeid(string)){
+       (temp->data).stringType = (VSPtr<string>*)pVsPtr;
+       temp->dataType = typeid(string).name();
+   } else if (typeid(T) == typeid(bool)){
+       (temp->data).boolType = (VSPtr<bool>*)pVsPtr;
+       temp->dataType = typeid(bool).name();
+   }
+
     temp->next = NULL;
     if(head == NULL){
         head = temp;
@@ -27,29 +51,65 @@ void LinkedList<T>::createNode(VSPtr<T> *pVsPtr){
     }
 }
 
-template<typename T>
-void LinkedList<T>::display(){
-    Node<T> *temp = new Node<T>;
+void LinkedList::display(){
+    Node *temp = new Node;
     temp = head;
     cout << endl << "¡IMPRIMIENDO LISTA! " << endl;
     while(temp != NULL){
-        cout << "       INSTANCIA VSPOINTER : " << temp->data << "  ";
-        cout << "       ID: " << temp->ID << "  ";
-        cout << "       PTR: " << (temp->data)->getAddress() << "  ";
-        cout << "       *PTR: " << *((temp->data)->getAddress())<< endl;
-        temp = temp->next;
+        if (temp->dataType == typeid(int).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).intType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << ((temp->data).intType)->getAddress() << "  ";
+            cout << "       *PTR: " << *(((temp->data).intType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(float).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).floatType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << ((temp->data).floatType)->getAddress() << "  ";
+            cout << "       *PTR: " << *(((temp->data).floatType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(double).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).doubleType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << ((temp->data).doubleType)->getAddress() << "  ";
+            cout << "       *PTR: " << *(((temp->data).doubleType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(long).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).longType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << ((temp->data).longType)->getAddress() << "  ";
+            cout << "       *PTR: " << *(((temp->data).longType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(char).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).charType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << static_cast<void *>(((temp->data).charType)->getAddress()) << "  ";
+            cout << "       *PTR: " << *(((temp->data).charType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(string).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).stringType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << static_cast<void *>(((temp->data).stringType)->getAddress()) << "  ";
+            cout << "       *PTR: " << *(((temp->data).stringType)->getAddress()) << endl;
+            temp = temp->next;
+        } else if (temp->dataType == typeid(bool).name()){
+            cout << "       INSTANCIA VSPOINTER : " << (temp->data).boolType << "  ";
+            cout << "       ID: " << temp->ID << "  ";
+            cout << "       PTR: " << static_cast<void *>(((temp->data).boolType)->getAddress()) << "  ";
+            cout << "       *PTR: " << *(((temp->data).boolType)->getAddress()) << endl;
+            temp = temp->next;
+        }
     }
     cout << endl << "****************************************************"
                     "**************************************************** " << endl;
 }
-template<typename T>
-int LinkedList<T>::getLength() {
+
+int LinkedList::getLength() {
     return length;
 }
-template<typename T>
-Node<T>* LinkedList<T>::getAtPosition(int id){
-    Node<T> *current = new Node<T>;
-    Node<T> *previous = new Node<T>;
+Node* LinkedList::getAtPosition(int id){
+    Node *current = new Node;
+    Node *previous = new Node;
     current = head;
 
     int i = 1;
@@ -61,24 +121,23 @@ Node<T>* LinkedList<T>::getAtPosition(int id){
 
     return current;
 }
-template<typename T>
-Node<T> *LinkedList<T>::getHead() {
+Node *LinkedList::getHead() {
     return this->head;
 }
 
 template<class T>
-void LinkedList<T>::insertAtFirst(T* value){
+void LinkedList::insertAtFirst(VSPtr<T> *value){
     length++;
-    Node<T> *temp = new Node<T>;
+    Node *temp = new Node;
     temp->data = value;
     temp->next = head;
     temp->ID = this->getLength() + 1;
     head = temp;
 }
 template<class T>
-void LinkedList<T>::insertAtEnd(T* value){
+void LinkedList::insertAtEnd(VSPtr<T> *value){
     length++;
-    Node<T> *temp = new Node<T>;
+    Node *temp = new Node;
     temp->data = value;
     temp->next = NULL;
     if(head == NULL){
@@ -94,11 +153,11 @@ void LinkedList<T>::insertAtEnd(T* value){
     }
 }
 template<class T>
-void LinkedList<T>::insertAtPosition(int pos, T* value){
+void LinkedList::insertAtPosition(int pos, VSPtr<T> *value){
     length++;
-    Node<T> *previous = new Node<T>;
-    Node<T> *current = new Node<T>;
-    Node<T> *temp = new Node<T>;
+    Node *previous = new Node;
+    Node *current = new Node;
+    Node *temp = new Node;
     current = head;
     for(int i = 1; i < pos; i++){
         previous = current;
@@ -108,7 +167,7 @@ void LinkedList<T>::insertAtPosition(int pos, T* value){
 
     //ASIGNACIÓN DE ID
     int mayor = 0;
-    Node<T> *temp2 = new Node<T>;
+    Node *temp2 = new Node;
     temp2 = head;
     while(temp2 != NULL){
         if (temp2->ID > mayor){
@@ -122,19 +181,17 @@ void LinkedList<T>::insertAtPosition(int pos, T* value){
     temp->next = current;
 }
 
-template<typename T>
-void LinkedList<T>::deleteFirst(){
+void LinkedList::deleteFirst(){
     length--;
-    Node<T> *temp = new Node<T>;
+    Node *temp = new Node;
     temp = head;
     head = head->next;
     delete temp;
 }
-template<typename T>
-void LinkedList<T>::deleteLast(){
+void LinkedList::deleteLast(){
     length--;
-    Node<T> *current = new Node<T>;
-    Node<T> *previous = new Node<T>;
+    Node *current = new Node;
+    Node *previous = new Node;
     current = head;
     while(current->next != NULL){
         previous = current;
@@ -145,28 +202,48 @@ void LinkedList<T>::deleteLast(){
     delete current;
 }
 template<class T>
-void LinkedList<T>::deleteAtPosition(VSPtr<T> *vsPtr){
+void LinkedList::deleteAtPosition(VSPtr<T> *vsPtr){
     length--;
-    Node<T> *current = new Node<T>;
-    Node<T> *previous = new Node<T>;
+    Node *current = new Node;
+    Node *previous = new Node;
     current = head;
 
-    while(current->data != vsPtr){
-        previous = current;
-        current = current->next;
+    for(int i = 0; i < this->getLength(); i++){
+        if (typeid(T) == typeid(int) && (current->data.intType) == (VSPtr<int>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(float) && (current->data.floatType) == (VSPtr<float>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(double) && (current->data.doubleType) == (VSPtr<double>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(long) && (current->data.longType) == (VSPtr<long>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(char) && (current->data.charType) == (VSPtr<char>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(string) && (current->data.stringType) == (VSPtr<string>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else if (typeid(T) == typeid(bool) && (current->data.boolType) == (VSPtr<bool>*)vsPtr){
+            previous->next = current->next;
+            break;
+        } else{
+            previous = current;
+            current = current->next;
+        }
     }
-
-    previous->next = current->next;
 }
-
 template<typename T>
-void LinkedList<T>::assignAll(int id, int sp){
-    Node<T> *temp = new Node<T>;
+void LinkedList::assignAll(int id, int sp){
+    Node *temp = new Node;
     temp = head;
     while(temp != NULL){
-        if (temp->data == (GarbageCollector::getList<T>()->getAtPosition(id))->data){
+        //if ((temp->data) == (GarbageCollector::getList()->getAtPosition(id))->data){
             //temp->value = sp;
-        }
+        //}
         temp = temp->next;
     }
 }

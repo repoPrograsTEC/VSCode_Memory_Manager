@@ -2,38 +2,58 @@
 #define PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__LINKEDLIST_H
 
 #include "VSPtr.h"
+#include <any>
+#include <variant>
+using std::any;
+using std::variant;
+using std::string;
 
-template<typename T>
+struct VSPtrType{
+    VSPtr<int> *intType;
+    VSPtr<float> *floatType;
+    VSPtr<double> *doubleType;
+    VSPtr<long> *longType;
+    VSPtr<char> *charType;
+    VSPtr<string> *stringType;
+    VSPtr<bool> *boolType;
+};
+
 struct Node {
-    VSPtr<T> *data;
+    VSPtrType data = VSPtrType();
+    string dataType;
     int ID;
     Node *next;
 };
 
-template<class T>
+
 class LinkedList {
 private:
-    Node<T> *head, *tail;
+    Node *head, *tail;
     int length = 0;
 
 public:
     LinkedList();
-
+    template<typename T>
     void createNode(VSPtr<T> *);
+
     void display();
 
     int getLength();
-    Node<T>* getAtPosition(int);
-    Node<T>* getHead();
+    Node* getAtPosition(int);
+    Node* getHead();
 
-    void insertAtFirst(T *);
-    void insertAtEnd(T *);
-    void insertAtPosition(int, T *);
+    template<typename T>
+    void insertAtFirst(VSPtr<T> *);
+    template<typename T>
+    void insertAtEnd(VSPtr<T> *);
+    template<typename T>
+    void insertAtPosition(int, VSPtr<T> *);
 
     void deleteFirst();
     void deleteLast();
+    template<typename T>
     void deleteAtPosition(VSPtr<T> *);
-
+    template<typename T>
     void assignAll(int, int);
 };
 
