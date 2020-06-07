@@ -5,23 +5,18 @@ export class TreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	private _onDidChangeTreeData: vscode.EventEmitter<TreeItem | undefined> = new vscode.EventEmitter<TreeItem | undefined>();
   	readonly onDidChangeTreeData: vscode.Event<TreeItem | undefined> = this._onDidChangeTreeData.event;
 
-	data: TreeItem[];
+	public data: TreeItem[];
   
 	constructor() {
 	  this.data = [];
 	  
 	}
-  
 
 	addData(element: TreeItem){
 		
 		this.data.push(element);
 
 	}
-
-
-	
-
 
 	getTreeItem(element: TreeItem): vscode.TreeItem|Thenable<vscode.TreeItem> {
 	  return element;
@@ -34,9 +29,7 @@ export class TreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 	  return element.children;
 	}
 
-
 	refresh(): void {
-
 
 		this._onDidChangeTreeData.fire();		
 
@@ -63,6 +56,7 @@ export class TreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 					});
     	});
 	}
+	
   }
   
   export class TreeItem extends vscode.TreeItem {

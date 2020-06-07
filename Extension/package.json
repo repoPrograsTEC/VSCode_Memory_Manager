@@ -14,52 +14,41 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-
-
 		"menus": {
-            "view/title": [
-                {
-                    "command": "TreeDataProvider.refreshEntry",
-                    "when": "view == TreeDataProvider",
-                    "group": "navigation"
-                }
-      ]
-    },
-
+			"view/title": [
+				{
+					"command": "TreeDataProvider.refreshEntry",
+					"when": "view == TreeDataProvider",
+					"group": "navigation"
+				}
+			]
+		},
 		"viewsContainers": {
 			"activitybar": [
-			  {
-				"id": "Heap-Visualizer",
-				"title": "Heap Visualizer",
-				"icon": "./resources/icons/battery-full.svg"
-			  }
+				{
+					"id": "Heap-Visualizer",
+					"title": "Heap Visualizer",
+					"icon": "./resources/icons/battery-full.svg"
+				}
 			]
-		  },
-
-
+		},
 		"views": {
-
 			"Heap-Visualizer": [
-				
 				{
 					"id": "TreeDataProvider",
 					"name": "VSPtr"
-
 				}
-
-			  ]
+			]
 		},
 		"commands": [
-
 			{
-                "command": "TreeDataProvider.refreshEntry",
-                "title": "Refrescar",
-                "icon": {
-                    "light": "resources/light/refresh.svg",
-                    "dark": "resources/dark/refresh.svg"
-                }
-            },
-
+				"command": "TreeDataProvider.refreshEntry",
+				"title": "Refrescar",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
 			{
 				"command": "extension.play",
 				"title": "Heap Visualizer"
@@ -90,6 +79,7 @@
 	"dependencies": {
 		"ffi": "^2.3.0",
 		"ffi-napi": "^2.5.0",
+		"ncp": "^2.0.0",
 		"path": "^0.12.7"
 	}
 }
