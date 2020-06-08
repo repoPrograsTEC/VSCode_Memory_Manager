@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>VSCode Memory Manager - Documentación: Fichero Fuente /home/esteban/Escritorio/Esteban/VSCode_Memory_Manager/Archivos/Headers/GarbageCollector.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">VSCode Memory Manager - Documentación
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_garbage_collector_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">GarbageCollector.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_garbage_collector_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__GARBAGECOLLECTOR_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__GARBAGECOLLECTOR_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_linked_list_8h.html">LinkedList.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_garbage_collector.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_garbage_collector.html">GarbageCollector</a> {</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">protected</span>:</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a7c7537c85eb40d981cfccd1c88b94885">   14</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_garbage_collector.html#a7c7537c85eb40d981cfccd1c88b94885">value_</a>;</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a402d3e28eeb1b32b96bed782fc18c4b8">   18</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_garbage_collector.html#a402d3e28eeb1b32b96bed782fc18c4b8">length</a>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a5dfc3cc58b8e4fa82d84e66a830d7cc7">   24</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_garbage_collector.html">GarbageCollector</a> *<a class="code" href="class_garbage_collector.html#a5dfc3cc58b8e4fa82d84e66a830d7cc7">inst_</a>;</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#ad282491396373f66e90e9d9a667c611f">   28</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="class_linked_list.html">LinkedList</a> *<a class="code" href="class_garbage_collector.html#ad282491396373f66e90e9d9a667c611f">list</a>;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a9b125d567fcf24605c1938910d7446df">   32</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a9b125d567fcf24605c1938910d7446df">firstIter</a>;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a1c6feb1b84047cc9a66fcbbab04f1929">   36</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a1c6feb1b84047cc9a66fcbbab04f1929">finished</a>;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#af34a66b2b6eb68e41f22508c7953ee29">   40</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#af34a66b2b6eb68e41f22508c7953ee29">stopThread</a>;</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_garbage_collector.html#a4c2443b2c0e9294fc608b05c331678ab">   44</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a4c2443b2c0e9294fc608b05c331678ab">inDestructor</a>;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_garbage_collector.html#a78b0b35e1b0f76dc688f73cb2b7db86f">GarbageCollector</a>();</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_garbage_collector.html#a78b0b35e1b0f76dc688f73cb2b7db86f">GarbageCollector</a>(<span class="keyword">const</span> <a class="code" href="class_garbage_collector.html">GarbageCollector</a> &amp;);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_garbage_collector.html">GarbageCollector</a> &amp;<a class="code" href="class_garbage_collector.html#a9000f44dbea6cb5f33b6ad7fa160c862">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_garbage_collector.html">GarbageCollector</a> &amp;);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#a94737fd2e9d882085e783167e78edf86">init</a>();</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_garbage_collector.html">GarbageCollector</a> *<a class="code" href="class_garbage_collector.html#ade4bccdf41223cc395b646db3f60ac8b">getInstance</a>();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_linked_list.html">LinkedList</a> *<a class="code" href="class_garbage_collector.html#a986d18b3980ec11a2cc87aab021e0143">getList</a>();</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#a02bfec2f0910d4dd14649752fafdabb5">deleteInst</a>();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_garbage_collector.html#a340064a04223def048de387b1a6ecf1b">getValue</a>();</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#adb1295cd7d6b4e85fdc66218823709a5">getIter</a>();</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a4051c11319a4ae12f5b44f7932357a37">getFinished</a>();</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a3603d03ff8c9674bcef1b919a5b0b6db">getStopThread</a>();</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_garbage_collector.html#a837a75bd7e4f5cb3258670d02a9a4ae6">getBoolDestructor</a>();</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#ad8af48a297c12dbdee133a84a8ffac1e">setBoolDestructor</a>();</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#a205cba87ca483cccb3a1e7029437cbd4">setValue</a>(<span class="keywordtype">int</span> val);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#a9acfcceb0710852932437a9d3ffc4e10">executeThread</a>();</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_garbage_collector.html#af36f1e6426b967aa2781615933df0942">threadOn</a>();</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;};</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif //PRUEBAS_DE_FUNCIONALIDAD__PROYECTO_1__GARBAGECOLLECTOR_H</span></div><div class="ttc" id="class_garbage_collector_html_af36f1e6426b967aa2781615933df0942"><div class="ttname"><a href="class_garbage_collector.html#af36f1e6426b967aa2781615933df0942">GarbageCollector::threadOn</a></div><div class="ttdeci">static void threadOn()</div><div class="ttdoc">Método que se encarga de ejecutar el thread de la clase Garbage Collector cada 1 segundo. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:84</div></div>
+<div class="ttc" id="class_garbage_collector_html_adb1295cd7d6b4e85fdc66218823709a5"><div class="ttname"><a href="class_garbage_collector.html#adb1295cd7d6b4e85fdc66218823709a5">GarbageCollector::getIter</a></div><div class="ttdeci">bool getIter()</div><div class="ttdoc">Método que devuelve el valor de la variable firstIter. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:46</div></div>
+<div class="ttc" id="class_garbage_collector_html_ad8af48a297c12dbdee133a84a8ffac1e"><div class="ttname"><a href="class_garbage_collector.html#ad8af48a297c12dbdee133a84a8ffac1e">GarbageCollector::setBoolDestructor</a></div><div class="ttdeci">static void setBoolDestructor()</div><div class="ttdoc">Método que cambia el valor de la variable inDestructor. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:58</div></div>
+<div class="ttc" id="class_garbage_collector_html_a02bfec2f0910d4dd14649752fafdabb5"><div class="ttname"><a href="class_garbage_collector.html#a02bfec2f0910d4dd14649752fafdabb5">GarbageCollector::deleteInst</a></div><div class="ttdeci">static void deleteInst()</div><div class="ttdoc">Método que elimina las instancias del Garbage Collector y la estructura de datos utilizada cuando est...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:36</div></div>
+<div class="ttc" id="class_garbage_collector_html_a205cba87ca483cccb3a1e7029437cbd4"><div class="ttname"><a href="class_garbage_collector.html#a205cba87ca483cccb3a1e7029437cbd4">GarbageCollector::setValue</a></div><div class="ttdeci">void setValue(int val)</div><div class="ttdoc">Método que establece el valor de la variable value_. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:61</div></div>
+<div class="ttc" id="class_garbage_collector_html_a1c6feb1b84047cc9a66fcbbab04f1929"><div class="ttname"><a href="class_garbage_collector.html#a1c6feb1b84047cc9a66fcbbab04f1929">GarbageCollector::finished</a></div><div class="ttdeci">static bool finished</div><div class="ttdoc">Variable utilizada para validación de finalización del thread. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:36</div></div>
+<div class="ttc" id="class_garbage_collector_html_ad282491396373f66e90e9d9a667c611f"><div class="ttname"><a href="class_garbage_collector.html#ad282491396373f66e90e9d9a667c611f">GarbageCollector::list</a></div><div class="ttdeci">static LinkedList * list</div><div class="ttdoc">Variable que contiene la estructura de datos que almacena todos los objetos de tipo VSPtr...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:28</div></div>
+<div class="ttc" id="class_garbage_collector_html_a402d3e28eeb1b32b96bed782fc18c4b8"><div class="ttname"><a href="class_garbage_collector.html#a402d3e28eeb1b32b96bed782fc18c4b8">GarbageCollector::length</a></div><div class="ttdeci">static int length</div><div class="ttdoc">Variable que contiene el largo de la estructura de datos utilizada para almacenar los objetos VSPtr...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:18</div></div>
+<div class="ttc" id="_linked_list_8h_html"><div class="ttname"><a href="_linked_list_8h.html">LinkedList.h</a></div></div>
+<div class="ttc" id="class_garbage_collector_html_a4c2443b2c0e9294fc608b05c331678ab"><div class="ttname"><a href="class_garbage_collector.html#a4c2443b2c0e9294fc608b05c331678ab">GarbageCollector::inDestructor</a></div><div class="ttdeci">static bool inDestructor</div><div class="ttdoc">Variable utilizada para validación de la correcta eliminación de la instancia del Garbage Collector...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:44</div></div>
+<div class="ttc" id="class_garbage_collector_html_a94737fd2e9d882085e783167e78edf86"><div class="ttname"><a href="class_garbage_collector.html#a94737fd2e9d882085e783167e78edf86">GarbageCollector::init</a></div><div class="ttdeci">static void init()</div><div class="ttdoc">Método que inicializa la clase Garbage Collector para que cumpla con el comportamiento del patrón de ...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:15</div></div>
+<div class="ttc" id="class_garbage_collector_html_a340064a04223def048de387b1a6ecf1b"><div class="ttname"><a href="class_garbage_collector.html#a340064a04223def048de387b1a6ecf1b">GarbageCollector::getValue</a></div><div class="ttdeci">int getValue()</div><div class="ttdoc">Método que devuelve el valor de la variable value_. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:43</div></div>
+<div class="ttc" id="class_garbage_collector_html_a9acfcceb0710852932437a9d3ffc4e10"><div class="ttname"><a href="class_garbage_collector.html#a9acfcceb0710852932437a9d3ffc4e10">GarbageCollector::executeThread</a></div><div class="ttdeci">static void executeThread()</div><div class="ttdoc">Método que ejecuta las validaciones respectivas del thread para su correcto funcionamiento. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:65</div></div>
+<div class="ttc" id="class_garbage_collector_html_a4051c11319a4ae12f5b44f7932357a37"><div class="ttname"><a href="class_garbage_collector.html#a4051c11319a4ae12f5b44f7932357a37">GarbageCollector::getFinished</a></div><div class="ttdeci">bool getFinished()</div><div class="ttdoc">Método que devuelve el valor de la variable finished. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:49</div></div>
+<div class="ttc" id="class_linked_list_html"><div class="ttname"><a href="class_linked_list.html">LinkedList</a></div><div class="ttdoc">Clase LinkedList que genera la estructura de datos utilizada para almacenar los objetos VSPtr...</div><div class="ttdef"><b>Definition:</b> LinkedList.h:67</div></div>
+<div class="ttc" id="class_garbage_collector_html_ade4bccdf41223cc395b646db3f60ac8b"><div class="ttname"><a href="class_garbage_collector.html#ade4bccdf41223cc395b646db3f60ac8b">GarbageCollector::getInstance</a></div><div class="ttdeci">static GarbageCollector * getInstance()</div><div class="ttdoc">Método que retorna la instancia de la clase Garbage Collector. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:25</div></div>
+<div class="ttc" id="class_garbage_collector_html_a3603d03ff8c9674bcef1b919a5b0b6db"><div class="ttname"><a href="class_garbage_collector.html#a3603d03ff8c9674bcef1b919a5b0b6db">GarbageCollector::getStopThread</a></div><div class="ttdeci">bool getStopThread()</div><div class="ttdoc">Método que devuelve el valor de la variable stopThread. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:52</div></div>
+<div class="ttc" id="class_garbage_collector_html_a78b0b35e1b0f76dc688f73cb2b7db86f"><div class="ttname"><a href="class_garbage_collector.html#a78b0b35e1b0f76dc688f73cb2b7db86f">GarbageCollector::GarbageCollector</a></div><div class="ttdeci">GarbageCollector()</div><div class="ttdoc">Constructor por defecto de la clase Garbage Collector. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:22</div></div>
+<div class="ttc" id="class_garbage_collector_html_a9000f44dbea6cb5f33b6ad7fa160c862"><div class="ttname"><a href="class_garbage_collector.html#a9000f44dbea6cb5f33b6ad7fa160c862">GarbageCollector::operator=</a></div><div class="ttdeci">GarbageCollector &amp; operator=(const GarbageCollector &amp;)</div><div class="ttdoc">Método que sobrecarga el operador = para evitar reasignación de la instancia del Garbage Collector...</div></div>
+<div class="ttc" id="class_garbage_collector_html"><div class="ttname"><a href="class_garbage_collector.html">GarbageCollector</a></div><div class="ttdoc">Clase Garbage Collector que se encarga de administrar la memoria del programa automáticamente. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:9</div></div>
+<div class="ttc" id="class_garbage_collector_html_a986d18b3980ec11a2cc87aab021e0143"><div class="ttname"><a href="class_garbage_collector.html#a986d18b3980ec11a2cc87aab021e0143">GarbageCollector::getList</a></div><div class="ttdeci">static LinkedList * getList()</div><div class="ttdoc">Método que retorna la instancia de la estructura de datos utilizada dentro de la clase Garbage Collec...</div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:32</div></div>
+<div class="ttc" id="class_garbage_collector_html_af34a66b2b6eb68e41f22508c7953ee29"><div class="ttname"><a href="class_garbage_collector.html#af34a66b2b6eb68e41f22508c7953ee29">GarbageCollector::stopThread</a></div><div class="ttdeci">static bool stopThread</div><div class="ttdoc">Variable utilizada para validación de finalización del thread. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:40</div></div>
+<div class="ttc" id="class_garbage_collector_html_a9b125d567fcf24605c1938910d7446df"><div class="ttname"><a href="class_garbage_collector.html#a9b125d567fcf24605c1938910d7446df">GarbageCollector::firstIter</a></div><div class="ttdeci">static bool firstIter</div><div class="ttdoc">Variable utilizada para validación de inicio del thread. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:32</div></div>
+<div class="ttc" id="class_garbage_collector_html_a837a75bd7e4f5cb3258670d02a9a4ae6"><div class="ttname"><a href="class_garbage_collector.html#a837a75bd7e4f5cb3258670d02a9a4ae6">GarbageCollector::getBoolDestructor</a></div><div class="ttdeci">static bool getBoolDestructor()</div><div class="ttdoc">Método que devuelve el valor de la variable inDestructor. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.cpp:55</div></div>
+<div class="ttc" id="class_garbage_collector_html_a7c7537c85eb40d981cfccd1c88b94885"><div class="ttname"><a href="class_garbage_collector.html#a7c7537c85eb40d981cfccd1c88b94885">GarbageCollector::value_</a></div><div class="ttdeci">int value_</div><div class="ttdoc">Variable que almacena el valor de inicialización de la clase Garbage Collector. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:14</div></div>
+<div class="ttc" id="class_garbage_collector_html_a5dfc3cc58b8e4fa82d84e66a830d7cc7"><div class="ttname"><a href="class_garbage_collector.html#a5dfc3cc58b8e4fa82d84e66a830d7cc7">GarbageCollector::inst_</a></div><div class="ttdeci">static GarbageCollector * inst_</div><div class="ttdoc">Variable que contiene la instancia del Garbage Collector. </div><div class="ttdef"><b>Definition:</b> GarbageCollector.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7d5b2e113af9e164ada12be8a7ab782d.html">Archivos</a></li><li class="navelem"><a class="el" href="dir_27811cf22af7382faf6e8205cb4f3b89.html">Headers</a></li><li class="navelem"><a class="el" href="_garbage_collector_8h.html">GarbageCollector.h</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>

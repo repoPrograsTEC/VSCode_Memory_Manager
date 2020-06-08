@@ -1,0 +1,818 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>VSCode Memory Manager - Documentación: Referencia de la Clase GarbageCollector</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">VSCode Memory Manager - Documentación
+   </div>
+  </td>
+   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_garbage_collector.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="#pro-attribs">Atributos protegidos</a> &#124;
+<a href="#pro-static-attribs">Atributos protegidos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="class_garbage_collector-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase GarbageCollector</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase Garbage Collector que se encarga de administrar la memoria del programa automáticamente.  
+ <a href="class_garbage_collector.html#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_garbage_collector_8h_source.html">GarbageCollector.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a340064a04223def048de387b1a6ecf1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a340064a04223def048de387b1a6ecf1b">getValue</a> ()</td></tr>
+<tr class="memdesc:a340064a04223def048de387b1a6ecf1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el valor de la variable value_.  <a href="#a340064a04223def048de387b1a6ecf1b">Más...</a><br /></td></tr>
+<tr class="separator:a340064a04223def048de387b1a6ecf1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb1295cd7d6b4e85fdc66218823709a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#adb1295cd7d6b4e85fdc66218823709a5">getIter</a> ()</td></tr>
+<tr class="memdesc:adb1295cd7d6b4e85fdc66218823709a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el valor de la variable firstIter.  <a href="#adb1295cd7d6b4e85fdc66218823709a5">Más...</a><br /></td></tr>
+<tr class="separator:adb1295cd7d6b4e85fdc66218823709a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4051c11319a4ae12f5b44f7932357a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a4051c11319a4ae12f5b44f7932357a37">getFinished</a> ()</td></tr>
+<tr class="memdesc:a4051c11319a4ae12f5b44f7932357a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el valor de la variable finished.  <a href="#a4051c11319a4ae12f5b44f7932357a37">Más...</a><br /></td></tr>
+<tr class="separator:a4051c11319a4ae12f5b44f7932357a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3603d03ff8c9674bcef1b919a5b0b6db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a3603d03ff8c9674bcef1b919a5b0b6db">getStopThread</a> ()</td></tr>
+<tr class="memdesc:a3603d03ff8c9674bcef1b919a5b0b6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el valor de la variable stopThread.  <a href="#a3603d03ff8c9674bcef1b919a5b0b6db">Más...</a><br /></td></tr>
+<tr class="separator:a3603d03ff8c9674bcef1b919a5b0b6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a205cba87ca483cccb3a1e7029437cbd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a205cba87ca483cccb3a1e7029437cbd4">setValue</a> (int val)</td></tr>
+<tr class="memdesc:a205cba87ca483cccb3a1e7029437cbd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que establece el valor de la variable value_.  <a href="#a205cba87ca483cccb3a1e7029437cbd4">Más...</a><br /></td></tr>
+<tr class="separator:a205cba87ca483cccb3a1e7029437cbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:a94737fd2e9d882085e783167e78edf86"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a94737fd2e9d882085e783167e78edf86">init</a> ()</td></tr>
+<tr class="memdesc:a94737fd2e9d882085e783167e78edf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que inicializa la clase Garbage Collector para que cumpla con el comportamiento del patrón de diseño Singleton.  <a href="#a94737fd2e9d882085e783167e78edf86">Más...</a><br /></td></tr>
+<tr class="separator:a94737fd2e9d882085e783167e78edf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4bccdf41223cc395b646db3f60ac8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_garbage_collector.html">GarbageCollector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#ade4bccdf41223cc395b646db3f60ac8b">getInstance</a> ()</td></tr>
+<tr class="memdesc:ade4bccdf41223cc395b646db3f60ac8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que retorna la instancia de la clase Garbage Collector.  <a href="#ade4bccdf41223cc395b646db3f60ac8b">Más...</a><br /></td></tr>
+<tr class="separator:ade4bccdf41223cc395b646db3f60ac8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986d18b3980ec11a2cc87aab021e0143"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_linked_list.html">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a986d18b3980ec11a2cc87aab021e0143">getList</a> ()</td></tr>
+<tr class="memdesc:a986d18b3980ec11a2cc87aab021e0143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que retorna la instancia de la estructura de datos utilizada dentro de la clase Garbage Collector.  <a href="#a986d18b3980ec11a2cc87aab021e0143">Más...</a><br /></td></tr>
+<tr class="separator:a986d18b3980ec11a2cc87aab021e0143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02bfec2f0910d4dd14649752fafdabb5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a02bfec2f0910d4dd14649752fafdabb5">deleteInst</a> ()</td></tr>
+<tr class="memdesc:a02bfec2f0910d4dd14649752fafdabb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que elimina las instancias del Garbage Collector y la estructura de datos utilizada cuando estas ya no se ocupen.  <a href="#a02bfec2f0910d4dd14649752fafdabb5">Más...</a><br /></td></tr>
+<tr class="separator:a02bfec2f0910d4dd14649752fafdabb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837a75bd7e4f5cb3258670d02a9a4ae6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a837a75bd7e4f5cb3258670d02a9a4ae6">getBoolDestructor</a> ()</td></tr>
+<tr class="memdesc:a837a75bd7e4f5cb3258670d02a9a4ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que devuelve el valor de la variable inDestructor.  <a href="#a837a75bd7e4f5cb3258670d02a9a4ae6">Más...</a><br /></td></tr>
+<tr class="separator:a837a75bd7e4f5cb3258670d02a9a4ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8af48a297c12dbdee133a84a8ffac1e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#ad8af48a297c12dbdee133a84a8ffac1e">setBoolDestructor</a> ()</td></tr>
+<tr class="memdesc:ad8af48a297c12dbdee133a84a8ffac1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que cambia el valor de la variable inDestructor.  <a href="#ad8af48a297c12dbdee133a84a8ffac1e">Más...</a><br /></td></tr>
+<tr class="separator:ad8af48a297c12dbdee133a84a8ffac1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9acfcceb0710852932437a9d3ffc4e10"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a9acfcceb0710852932437a9d3ffc4e10">executeThread</a> ()</td></tr>
+<tr class="memdesc:a9acfcceb0710852932437a9d3ffc4e10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que ejecuta las validaciones respectivas del thread para su correcto funcionamiento.  <a href="#a9acfcceb0710852932437a9d3ffc4e10">Más...</a><br /></td></tr>
+<tr class="separator:a9acfcceb0710852932437a9d3ffc4e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36f1e6426b967aa2781615933df0942"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#af36f1e6426b967aa2781615933df0942">threadOn</a> ()</td></tr>
+<tr class="memdesc:af36f1e6426b967aa2781615933df0942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que se encarga de ejecutar el thread de la clase Garbage Collector cada 1 segundo.  <a href="#af36f1e6426b967aa2781615933df0942">Más...</a><br /></td></tr>
+<tr class="separator:af36f1e6426b967aa2781615933df0942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Atributos protegidos</h2></td></tr>
+<tr class="memitem:a7c7537c85eb40d981cfccd1c88b94885"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a7c7537c85eb40d981cfccd1c88b94885">value_</a></td></tr>
+<tr class="memdesc:a7c7537c85eb40d981cfccd1c88b94885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable que almacena el valor de inicialización de la clase Garbage Collector.  <a href="#a7c7537c85eb40d981cfccd1c88b94885">Más...</a><br /></td></tr>
+<tr class="separator:a7c7537c85eb40d981cfccd1c88b94885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+Atributos protegidos estáticos</h2></td></tr>
+<tr class="memitem:a402d3e28eeb1b32b96bed782fc18c4b8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a402d3e28eeb1b32b96bed782fc18c4b8">length</a> = 0</td></tr>
+<tr class="memdesc:a402d3e28eeb1b32b96bed782fc18c4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable que contiene el largo de la estructura de datos utilizada para almacenar los objetos <a class="el" href="class_v_s_ptr.html" title="Clase VSPtr que se encarga de tratar los objetos creados como smart pointers. ">VSPtr</a>.  <a href="#a402d3e28eeb1b32b96bed782fc18c4b8">Más...</a><br /></td></tr>
+<tr class="separator:a402d3e28eeb1b32b96bed782fc18c4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a78b0b35e1b0f76dc688f73cb2b7db86f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a78b0b35e1b0f76dc688f73cb2b7db86f">GarbageCollector</a> ()</td></tr>
+<tr class="memdesc:a78b0b35e1b0f76dc688f73cb2b7db86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto de la clase Garbage Collector.  <a href="#a78b0b35e1b0f76dc688f73cb2b7db86f">Más...</a><br /></td></tr>
+<tr class="separator:a78b0b35e1b0f76dc688f73cb2b7db86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a343fa16e5d401d687828b975af046"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a65a343fa16e5d401d687828b975af046">GarbageCollector</a> (const <a class="el" href="class_garbage_collector.html">GarbageCollector</a> &amp;)</td></tr>
+<tr class="memdesc:a65a343fa16e5d401d687828b975af046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de la clase Garbage Collector.  <a href="#a65a343fa16e5d401d687828b975af046">Más...</a><br /></td></tr>
+<tr class="separator:a65a343fa16e5d401d687828b975af046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9000f44dbea6cb5f33b6ad7fa160c862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_garbage_collector.html">GarbageCollector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a9000f44dbea6cb5f33b6ad7fa160c862">operator=</a> (const <a class="el" href="class_garbage_collector.html">GarbageCollector</a> &amp;)</td></tr>
+<tr class="memdesc:a9000f44dbea6cb5f33b6ad7fa160c862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que sobrecarga el operador = para evitar reasignación de la instancia del Garbage Collector.  <a href="#a9000f44dbea6cb5f33b6ad7fa160c862">Más...</a><br /></td></tr>
+<tr class="separator:a9000f44dbea6cb5f33b6ad7fa160c862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a5dfc3cc58b8e4fa82d84e66a830d7cc7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_garbage_collector.html">GarbageCollector</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a5dfc3cc58b8e4fa82d84e66a830d7cc7">inst_</a> = nullptr</td></tr>
+<tr class="memdesc:a5dfc3cc58b8e4fa82d84e66a830d7cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable que contiene la instancia del Garbage Collector.  <a href="#a5dfc3cc58b8e4fa82d84e66a830d7cc7">Más...</a><br /></td></tr>
+<tr class="separator:a5dfc3cc58b8e4fa82d84e66a830d7cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad282491396373f66e90e9d9a667c611f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_linked_list.html">LinkedList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#ad282491396373f66e90e9d9a667c611f">list</a> = nullptr</td></tr>
+<tr class="memdesc:ad282491396373f66e90e9d9a667c611f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable que contiene la estructura de datos que almacena todos los objetos de tipo <a class="el" href="class_v_s_ptr.html" title="Clase VSPtr que se encarga de tratar los objetos creados como smart pointers. ">VSPtr</a>.  <a href="#ad282491396373f66e90e9d9a667c611f">Más...</a><br /></td></tr>
+<tr class="separator:ad282491396373f66e90e9d9a667c611f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b125d567fcf24605c1938910d7446df"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a9b125d567fcf24605c1938910d7446df">firstIter</a> = true</td></tr>
+<tr class="memdesc:a9b125d567fcf24605c1938910d7446df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable utilizada para validación de inicio del thread.  <a href="#a9b125d567fcf24605c1938910d7446df">Más...</a><br /></td></tr>
+<tr class="separator:a9b125d567fcf24605c1938910d7446df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6feb1b84047cc9a66fcbbab04f1929"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a1c6feb1b84047cc9a66fcbbab04f1929">finished</a> = false</td></tr>
+<tr class="memdesc:a1c6feb1b84047cc9a66fcbbab04f1929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable utilizada para validación de finalización del thread.  <a href="#a1c6feb1b84047cc9a66fcbbab04f1929">Más...</a><br /></td></tr>
+<tr class="separator:a1c6feb1b84047cc9a66fcbbab04f1929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34a66b2b6eb68e41f22508c7953ee29"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#af34a66b2b6eb68e41f22508c7953ee29">stopThread</a> = false</td></tr>
+<tr class="memdesc:af34a66b2b6eb68e41f22508c7953ee29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable utilizada para validación de finalización del thread.  <a href="#af34a66b2b6eb68e41f22508c7953ee29">Más...</a><br /></td></tr>
+<tr class="separator:af34a66b2b6eb68e41f22508c7953ee29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c2443b2c0e9294fc608b05c331678ab"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_garbage_collector.html#a4c2443b2c0e9294fc608b05c331678ab">inDestructor</a> = false</td></tr>
+<tr class="memdesc:a4c2443b2c0e9294fc608b05c331678ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable utilizada para validación de la correcta eliminación de la instancia del Garbage Collector.  <a href="#a4c2443b2c0e9294fc608b05c331678ab">Más...</a><br /></td></tr>
+<tr class="separator:a4c2443b2c0e9294fc608b05c331678ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase Garbage Collector que se encarga de administrar la memoria del programa automáticamente. </p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="a78b0b35e1b0f76dc688f73cb2b7db86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b0b35e1b0f76dc688f73cb2b7db86f">&#9670;&nbsp;</a></span>GarbageCollector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GarbageCollector::GarbageCollector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor por defecto de la clase Garbage Collector. </p>
+
+</div>
+</div>
+<a id="a65a343fa16e5d401d687828b975af046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a343fa16e5d401d687828b975af046">&#9670;&nbsp;</a></span>GarbageCollector() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GarbageCollector::GarbageCollector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_garbage_collector.html">GarbageCollector</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor de la clase Garbage Collector. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a02bfec2f0910d4dd14649752fafdabb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02bfec2f0910d4dd14649752fafdabb5">&#9670;&nbsp;</a></span>deleteInst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::deleteInst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que elimina las instancias del Garbage Collector y la estructura de datos utilizada cuando estas ya no se ocupen. </p>
+
+</div>
+</div>
+<a id="a9acfcceb0710852932437a9d3ffc4e10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9acfcceb0710852932437a9d3ffc4e10">&#9670;&nbsp;</a></span>executeThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::executeThread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que ejecuta las validaciones respectivas del thread para su correcto funcionamiento. </p>
+
+</div>
+</div>
+<a id="a837a75bd7e4f5cb3258670d02a9a4ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837a75bd7e4f5cb3258670d02a9a4ae6">&#9670;&nbsp;</a></span>getBoolDestructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::getBoolDestructor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el valor de la variable inDestructor. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna el valor de la variable inDestructor </dd></dl>
+
+</div>
+</div>
+<a id="a4051c11319a4ae12f5b44f7932357a37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4051c11319a4ae12f5b44f7932357a37">&#9670;&nbsp;</a></span>getFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::getFinished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el valor de la variable finished. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna el valor de la variable finished </dd></dl>
+
+</div>
+</div>
+<a id="ade4bccdf41223cc395b646db3f60ac8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4bccdf41223cc395b646db3f60ac8b">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_garbage_collector.html">GarbageCollector</a> * GarbageCollector::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que retorna la instancia de la clase Garbage Collector. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna la instancia de la clase Garbage Collector </dd></dl>
+
+</div>
+</div>
+<a id="adb1295cd7d6b4e85fdc66218823709a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb1295cd7d6b4e85fdc66218823709a5">&#9670;&nbsp;</a></span>getIter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::getIter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el valor de la variable firstIter. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna el valor de la variable firstIter </dd></dl>
+
+</div>
+</div>
+<a id="a986d18b3980ec11a2cc87aab021e0143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986d18b3980ec11a2cc87aab021e0143">&#9670;&nbsp;</a></span>getList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_linked_list.html">LinkedList</a> * GarbageCollector::getList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que retorna la instancia de la estructura de datos utilizada dentro de la clase Garbage Collector. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna la instancia de la estructura de datos utilizada dentro de la clase Garbage Collector </dd></dl>
+
+</div>
+</div>
+<a id="a3603d03ff8c9674bcef1b919a5b0b6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3603d03ff8c9674bcef1b919a5b0b6db">&#9670;&nbsp;</a></span>getStopThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::getStopThread </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el valor de la variable stopThread. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna el valor de la variable stopThread </dd></dl>
+
+</div>
+</div>
+<a id="a340064a04223def048de387b1a6ecf1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a340064a04223def048de387b1a6ecf1b">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GarbageCollector::getValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que devuelve el valor de la variable value_. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna el valor de la variable value_ </dd></dl>
+
+</div>
+</div>
+<a id="a94737fd2e9d882085e783167e78edf86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94737fd2e9d882085e783167e78edf86">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que inicializa la clase Garbage Collector para que cumpla con el comportamiento del patrón de diseño Singleton. </p>
+
+</div>
+</div>
+<a id="a9000f44dbea6cb5f33b6ad7fa160c862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9000f44dbea6cb5f33b6ad7fa160c862">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_garbage_collector.html">GarbageCollector</a>&amp; GarbageCollector::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_garbage_collector.html">GarbageCollector</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que sobrecarga el operador = para evitar reasignación de la instancia del Garbage Collector. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Se retorna la referencia a la instancia del Garbage Collector </dd></dl>
+
+</div>
+</div>
+<a id="ad8af48a297c12dbdee133a84a8ffac1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8af48a297c12dbdee133a84a8ffac1e">&#9670;&nbsp;</a></span>setBoolDestructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::setBoolDestructor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que cambia el valor de la variable inDestructor. </p>
+
+</div>
+</div>
+<a id="a205cba87ca483cccb3a1e7029437cbd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a205cba87ca483cccb3a1e7029437cbd4">&#9670;&nbsp;</a></span>setValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::setValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Método que establece el valor de la variable value_. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>- Valor que se desea establecer en la variable value_ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af36f1e6426b967aa2781615933df0942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36f1e6426b967aa2781615933df0942">&#9670;&nbsp;</a></span>threadOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GarbageCollector::threadOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método que se encarga de ejecutar el thread de la clase Garbage Collector cada 1 segundo. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="a1c6feb1b84047cc9a66fcbbab04f1929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c6feb1b84047cc9a66fcbbab04f1929">&#9670;&nbsp;</a></span>finished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::finished = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable utilizada para validación de finalización del thread. </p>
+
+</div>
+</div>
+<a id="a9b125d567fcf24605c1938910d7446df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b125d567fcf24605c1938910d7446df">&#9670;&nbsp;</a></span>firstIter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::firstIter = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable utilizada para validación de inicio del thread. </p>
+
+</div>
+</div>
+<a id="a4c2443b2c0e9294fc608b05c331678ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2443b2c0e9294fc608b05c331678ab">&#9670;&nbsp;</a></span>inDestructor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::inDestructor = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable utilizada para validación de la correcta eliminación de la instancia del Garbage Collector. </p>
+
+</div>
+</div>
+<a id="a5dfc3cc58b8e4fa82d84e66a830d7cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfc3cc58b8e4fa82d84e66a830d7cc7">&#9670;&nbsp;</a></span>inst_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_garbage_collector.html">GarbageCollector</a> * GarbageCollector::inst_ = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable que contiene la instancia del Garbage Collector. </p>
+
+</div>
+</div>
+<a id="a402d3e28eeb1b32b96bed782fc18c4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402d3e28eeb1b32b96bed782fc18c4b8">&#9670;&nbsp;</a></span>length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GarbageCollector::length = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable que contiene el largo de la estructura de datos utilizada para almacenar los objetos <a class="el" href="class_v_s_ptr.html" title="Clase VSPtr que se encarga de tratar los objetos creados como smart pointers. ">VSPtr</a>. </p>
+
+</div>
+</div>
+<a id="ad282491396373f66e90e9d9a667c611f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad282491396373f66e90e9d9a667c611f">&#9670;&nbsp;</a></span>list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_linked_list.html">LinkedList</a> * GarbageCollector::list = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable que contiene la estructura de datos que almacena todos los objetos de tipo <a class="el" href="class_v_s_ptr.html" title="Clase VSPtr que se encarga de tratar los objetos creados como smart pointers. ">VSPtr</a>. </p>
+
+</div>
+</div>
+<a id="af34a66b2b6eb68e41f22508c7953ee29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34a66b2b6eb68e41f22508c7953ee29">&#9670;&nbsp;</a></span>stopThread</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GarbageCollector::stopThread = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable utilizada para validación de finalización del thread. </p>
+
+</div>
+</div>
+<a id="a7c7537c85eb40d981cfccd1c88b94885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7537c85eb40d981cfccd1c88b94885">&#9670;&nbsp;</a></span>value_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GarbageCollector::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable que almacena el valor de inicialización de la clase Garbage Collector. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_garbage_collector.html">GarbageCollector</a></li>
+    <li class="footer">Generado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>
