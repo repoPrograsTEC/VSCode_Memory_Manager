@@ -1,0 +1,21 @@
+digraph "Archivos/Headers/GarbageCollector.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node6 [label="Archivos/Headers/Garbage\lCollector.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Archivos/CPP/GarbageCollector.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_garbage_collector_8cpp.html"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Main/Main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_main_8cpp.html"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Archivos/Headers/VSPtr.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_v_s_ptr_8h.html"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Archivos/Headers/LinkedList.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_linked_list_8h.html"];
+  Node10 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Archivos/CPP/LinkedList.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_linked_list_8cpp.html"];
+  Node11 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Archivos/CPP/VSPtr.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_v_s_ptr_8cpp.html"];
+  Node12 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

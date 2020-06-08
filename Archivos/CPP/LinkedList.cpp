@@ -236,14 +236,3 @@ void LinkedList::deleteAtPosition(VSPtr<T> *vsPtr){
         }
     }
 }
-template<typename T>
-void LinkedList::assignAll(int id, int sp){
-    Node *temp = new Node;
-    temp = head;
-    while(temp != NULL){
-        //if ((temp->data) == (GarbageCollector::getList()->getAtPosition(id))->data){
-            //temp->value = sp;
-        //}
-        temp = temp->next;
-    }
-}

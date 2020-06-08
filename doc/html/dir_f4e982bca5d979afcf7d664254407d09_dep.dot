@@ -1,0 +1,8 @@
+digraph "Main" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_f4e982bca5d979afcf7d664254407d09 [shape=box, label="Main", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f4e982bca5d979afcf7d664254407d09.html"];
+  dir_7d5b2e113af9e164ada12be8a7ab782d [shape=box label="Archivos" fillcolor="white" style="filled" color="red" URL="dir_7d5b2e113af9e164ada12be8a7ab782d.html"];
+  dir_f4e982bca5d979afcf7d664254407d09->dir_7d5b2e113af9e164ada12be8a7ab782d [headlabel="4", labeldistance=1.5 headhref="dir_000008_000000.html"];
+}
