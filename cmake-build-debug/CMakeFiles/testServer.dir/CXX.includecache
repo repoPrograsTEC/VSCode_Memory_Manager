@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/daniel/CLionProjects/testServer/Server.cpp
+cstdlib
+-
+cstdio
+-
+arpa/inet.h
+-
+sys/socket.h
+-
+nlohmann/json.hpp
+-
+fstream
+-
+iostream
+-
+nlohmann/json.hpp
+-
+unistd.h
+-
+
