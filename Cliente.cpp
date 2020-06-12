@@ -16,8 +16,9 @@ private:
     int cliente = socket(AF_INET, SOCK_STREAM, 0);
     char* buffer = static_cast<char *>(malloc(1000));
 
-public:
 
+public:
+    int coneccion;
     Cliente(const char * ip, int host){
 
         struct sockaddr_in diServidor{};
@@ -27,7 +28,11 @@ public:
 
         if (connect(cliente, reinterpret_cast<const sockaddr *>(&diServidor), sizeof(diServidor)) != 0) {
             perror("No se pudo conectar");
+            coneccion = 0;
+        }else {
+            coneccion = 1;
         }
+
 
     }
 
@@ -54,7 +59,7 @@ public:
         int bytesRecibidos = recv(cliente, buffer, 1000, 0);
 
         if (bytesRecibidos <= 0) {
-            perror("Desconectado.");
+            //perror("Desconectado.");
             return 0;
         } else {
             buffer[bytesRecibidos] = '\0';
@@ -74,10 +79,13 @@ public:
         return 0;
     }
 
-    void RecvData(const std::string& path){
+    void RecvData(const std::string& path, const std::string& user){
         free(buffer);
 
         send(cliente, "RecibirDatos", 12, 0);
+        sleep(1);
+        send(cliente, user.c_str(), user.length(), 0);
+        sleep(1);
 
 
         std::cout << "Enviando datos Datos" << std::endl;
@@ -153,7 +161,7 @@ public:
         }
     }
 
-    void SendData(const std::string& path) {
+    void SendData(const std::string& path,const std::string& user) {
 
         send (cliente, "EnviandoDatos", 13, 0);
         std::cout << "Enviando datos Datos" << std::endl;
@@ -171,14 +179,18 @@ public:
 
             for (auto element = (*ra).begin(); element != (*ra).end(); element++) {
 
-                //send(cliente, std::string(element.key()).c_str(), std::string(element.key()).length(), 0);
-                //sleep(1);
-
                 send(cliente, std::string(element.value().dump()).c_str(),
                         std::string(element.value().dump()).length(), 0);
                 sleep(1);
+
             }
         }
+
+        send(cliente, "user.c_str()", 12, 0);
+        sleep(1);
+
+        send(cliente, user.c_str(), user.length(), 0);
+        sleep(1);
 
         std::cout << "Terminando Datos" << std::endl;
         send (cliente, "TermDatos", 13, 0);
@@ -186,47 +198,55 @@ public:
 
     }
 
-    void SendMessage(){
+};
 
-        while (true) {
-
-            //int bytesRecibidos = recv(cliente, buffer, 1000, 0);
-
-            std::string mensaje;
+bool TestConection(std::string ip, int host){
 
 
-            //std::cout << data << std::endl;
+    //try{
 
+        const char * IP = ip.c_str();
 
-            std::cin >> mensaje;
+        auto *cliente = new Cliente(IP, host);
+        return cliente->coneccion;
 
-
-            if (mensaje.length() != 1) {
-                send(cliente, mensaje.c_str(), mensaje.length(), 0);
-
-            }
-            else{
-                break;
-            }
-
+        /*
+        if(cliente->Verificar2()){
+            return true;
         }
+         */
+
+/*
+    } catch (int e) {
+
+        return false;
 
     }
+    */
 
-};
+}
 
 
 int main() {
 
-    auto *cliente = new Cliente("127.0.0.1", 8080);
+
+    int x = TestConection("127.0.0.1", 8080);
+
+    std::cout << x;
+
+    //auto *cliente = new Cliente("127.0.0.1", 8080);
+    //std::cout << cliente->coneccion;
+
 
     //cliente->Verificar2();
 
     //cliente->SendMessage();
 
-    //cliente -> SendData("/home/daniel/CLionProjects/prueba/cmake-build-debug/List.json");
+    //cliente -> SendData("/home/daniel/CLionProjects/prueba/List.json", "Dani");
 
-    cliente->RecvData("/home/daniel/Desktop/data.json");
+    // /home/daniel/Desktop/data.json
+
+    //cliente->RecvData("/home/daniel/Desktop/data.json", "Dani");
 
     return 0;
 }
