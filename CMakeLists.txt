@@ -3,4 +3,4 @@ project(testServer)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(testServer Server.cpp Cliente.cpp)
+add_executable(testServer Server.cpp)

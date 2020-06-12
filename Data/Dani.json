@@ -1,0 +1,46 @@
+{
+    "Lista": [
+        {
+            "Direccionmemoria": "\"0x55600e666000\"",
+            "ID": "1",
+            "Referencias": "2",
+            "Tipodedato": "\"int\"",
+            "Valor": "80"
+        },
+        {
+            "Direccionmemoria": "\"0x55600e666000\"",
+            "ID": "1",
+            "Referencias": "2",
+            "Tipodedato": "\"int\"",
+            "Valor": "80"
+        },
+        {
+            "Direccionmemoria": "\"0x55600e666160\"",
+            "ID": "3",
+            "Referencias": "2",
+            "Tipodedato": "\"float\"",
+            "Valor": "56.4000015258789"
+        },
+        {
+            "Direccionmemoria": "\"0x55600e666210\"",
+            "ID": "4",
+            "Referencias": "1",
+            "Tipodedato": "\"double\"",
+            "Valor": "1000.0"
+        },
+        {
+            "Direccionmemoria": "\"0x55600e6662c0\"",
+            "ID": "5",
+            "Referencias": "1",
+            "Tipodedato": "\"char\"",
+            "Valor": "100"
+        },
+        {
+            "Direccionmemoria": "\"0x55600e666160\"",
+            "ID": "3",
+            "Referencias": "2",
+            "Tipodedato": "\"float\"",
+            "Valor": "56.4000015258789"
+        }
+    ]
+}

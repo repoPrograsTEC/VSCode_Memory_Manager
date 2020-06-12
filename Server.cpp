@@ -9,9 +9,7 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <iostream>
-#include <nlohmann/json.hpp>
 #include <unistd.h>
-
 
 using json= nlohmann::json;
 
@@ -46,6 +44,7 @@ int main() {
     printf("Recibí una conexión en %d!!\n", cliente);
 
     send(cliente, saludo.c_str(), saludo.length(), 0);
+
     //------------------------------
 
     char* buffer ;
@@ -54,6 +53,7 @@ int main() {
     while (true) {
 
         //free(buffer);
+
         int bytesRecibidos = recv(cliente, buffer, 1000, 0);
         if (bytesRecibidos <= 0) {
             perror("Desconectado");
@@ -64,6 +64,7 @@ int main() {
         buffer[bytesRecibidos] = '\0';
 
         json datos;
+
         std::map<std::string , std::string> m1;
 
         std::string verificacion = buffer;
@@ -74,72 +75,72 @@ int main() {
 
             int cont = 1;
             bool ciclo = true;
+            std::string user;
 
             while(ciclo){
-                if (verificacion == ("TermDatos")){
 
+                if (verificacion == ("user.c_str()")){
+
+                    free(buffer);
+                    recv(cliente, buffer, 1000, 0);
+
+                    user = buffer;
+
+                }
+
+                if (verificacion == ("TermDatos")){
                     std::cout << "Terminando Datos" << std::endl;
                     ciclo = false;
-                    std::ofstream ob("/home/daniel/CLionProjects/testServer/data.json");
+                    // "/home/daniel/CLionProjects/testServer/data.json"
+                    std::ofstream ob("/home/daniel/CLionProjects/testServer/Data/" + user + ".json");
                     ob << std::setw(4) << datos << std::endl;
                 }
+
 
                 bytesRecibidos = recv(cliente, buffer, 1000, 0);
                 if (bytesRecibidos <= 0) {
                     perror("Desconectado");
                     return 1;
                 }
+
                 buffer[bytesRecibidos] = '\0';
                 verificacion = buffer;
 
-                std::string direccion, id, referencia, tipo, valor;
-
-
                 if (cont == 1) {
-                    //direccion = buffer;
-
                     m1.insert({"Direccionmemoria", std::string(buffer)});
                     cont++;
-                    //std::cout << direccion << std::endl;
                 }
                 else if (cont == 2) {
-                    //id = buffer;
                     m1.insert({"ID", buffer});
                     cont++;
-                    //std::cout << id << std::endl;
                 }
                 else if (cont == 3) {
-                    //referencia = buffer;
                     m1.insert({"Referencias", std::string(buffer)});
                     cont++;
-                    //std::cout << referencia << std::endl;
                 }
                 else if (cont == 4) {
-                    //tipo = buffer;
                     m1.insert({"Tipodedato", std::string(buffer)});
                     cont++;
-                    //std::cout << tipo << std::endl;
                 }
                 else if (cont == 5) {
-                    //valor = buffer;
                     cont = 1;
-                    //std::cout << valor << std::endl;
                     m1.insert({"Valor", std::string(buffer)});
                     datos["Lista"] += m1;
                     m1.clear();
                 }
-                //std::cout << m1.size() << std::endl;
                 std::cout << datos << std::endl;
-
             }
-
         }
 
         else if (verificacion == ("RecibirDatos")){
 
+            free(buffer);
+            recv(cliente, buffer, 1000, 0);
+
             std::cout << "Recibiendo datos Datos" << std::endl;
 
-            std::ifstream dataArchive("/home/daniel/CLionProjects/testServer/data.json", std::ifstream::binary);
+            // "/home/daniel/CLionProjects/testServer/data.json"
+            std::ifstream dataArchive("/home/daniel/CLionProjects/testServer/Data/" + std::string(buffer) + ".json", std::ifstream::binary);
 
             json data;
 
@@ -168,8 +169,6 @@ int main() {
         printf("Me llegaron %d bytes con %s\n", bytesRecibidos, buffer);
 
     }
-
-    free(buffer);
 
     return 0;
 }
