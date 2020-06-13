@@ -34,7 +34,7 @@ export class TreeDataProvider implements vscode.TreeDataProvider<TreeItem> {
 		this._onDidChangeTreeData.fire();		
 
 		let folderPath = vscode.workspace.rootPath;
-		let path = folderPath + '/cmake-build-debug/List.json';
+		let path = folderPath + '/List.json';
 		
 		let fs = require('fs');
 

@@ -20,6 +20,16 @@
 					"command": "TreeDataProvider.refreshEntry",
 					"when": "view == TreeDataProvider",
 					"group": "navigation"
+				},
+				{
+					"command": "TreeDataProvider.load",
+					"when": "view == TreeDataProvider",
+					"group": "navigation"
+				},
+				{
+					"command": "TreeDataProvider.save",
+					"when": "view == TreeDataProvider",
+					"group": "navigation"
 				}
 			]
 		},
@@ -47,6 +57,22 @@
 				"icon": {
 					"light": "resources/light/refresh.svg",
 					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "TreeDataProvider.load",
+				"title": "Load Data",
+				"icon": {
+					"light": "resources/light/boolean.svg",
+					"dark": "resources/dark/boolean.svg"
+				}
+			},
+			{
+				"command": "TreeDataProvider.save",
+				"title": "Save Data",
+				"icon": {
+					"light": "resources/light/dependency.svg",
+					"dark": "resources/dark/dependency.svg"
 				}
 			},
 			{

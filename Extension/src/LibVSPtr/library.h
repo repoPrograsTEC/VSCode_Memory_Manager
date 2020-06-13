@@ -8,6 +8,12 @@ class VSPtr;
 
 class GarbageCollector;
 
-extern "C" void Debbug();
+void Debbug();
+
+extern "C" bool TestConection(const char* ip, int host);
+
+extern "C" void sendData (const char* path, const char* user);
+
+extern "C" void recvData(const char* path, const char* user);
 
 #endif //VSPTR_LIBRARY_H

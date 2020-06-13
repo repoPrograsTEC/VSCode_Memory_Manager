@@ -42,7 +42,6 @@ export class Data {
 
     public showBoxText (title : string){ 
 
-
         let box = vscode.window.createInputBox();
 
         box.title = title;

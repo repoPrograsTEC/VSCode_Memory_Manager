@@ -22,7 +22,7 @@ class TreeDataProvider {
     refresh() {
         this._onDidChangeTreeData.fire();
         let folderPath = vscode.workspace.rootPath;
-        let path = folderPath + '/cmake-build-debug/List.json';
+        let path = folderPath + '/List.json';
         let fs = require('fs');
         fs.readFile(path, 'utf8', (err, json) => {
             if (err) {
